@@ -44,7 +44,5 @@ public class GameScreen extends ScreenAdapter {
         myGdxGame.batch.begin();
         shipObject.draw(myGdxGame.batch);
         myGdxGame.batch.end();
-
-        // myGdxGame.debugRenderer.render(myGdxGame.world, myGdxGame.camera.combined);
     }
 }
