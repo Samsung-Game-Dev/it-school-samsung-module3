@@ -167,7 +167,6 @@ public class GameScreen extends ScreenAdapter {
 
         myGdxGame.batch.end();
 
-        // myGdxGame.debugRenderer.render(myGdxGame.world, myGdxGame.camera.combined);
     }
 
     private void updateTrash() {
