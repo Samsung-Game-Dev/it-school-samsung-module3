@@ -12,7 +12,6 @@ import ru.samsung.gamestudio.objects.BulletObject;
 import ru.samsung.gamestudio.objects.ShipObject;
 import ru.samsung.gamestudio.objects.TrashObject;
 
-import javax.crypto.spec.PSource;
 import java.util.ArrayList;
 
 public class GameScreen extends ScreenAdapter {
@@ -83,8 +82,6 @@ public class GameScreen extends ScreenAdapter {
         shipObject.draw(myGdxGame.batch);
         for (BulletObject bullet : bulletArray) bullet.draw(myGdxGame.batch);
         myGdxGame.batch.end();
-
-        // myGdxGame.debugRenderer.render(myGdxGame.world, myGdxGame.camera.combined);
     }
 
     private void updateTrash() {
