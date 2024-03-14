@@ -1,9 +1,7 @@
 package ru.samsung.gamestudio;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.utils.TimeUtils;
 
-import java.util.ArrayList;
 
 public class GameSession {
 
