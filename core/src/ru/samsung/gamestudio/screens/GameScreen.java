@@ -83,6 +83,8 @@ public class GameScreen extends ScreenAdapter {
         updateTrash();
         updateBullets();
         backgroundView.move();
+        scoreTextView.setText("Score: " + 100);
+        liveView.setLeftLives(shipObject.getLiveLeft());
 
         draw();
     }
@@ -106,8 +108,8 @@ public class GameScreen extends ScreenAdapter {
         shipObject.draw(myGdxGame.batch);
         for (BulletObject bullet : bulletArray) bullet.draw(myGdxGame.batch);
         topBlackoutView.draw(myGdxGame.batch);
-        scoreTextView.draw("Score: " + 100, myGdxGame.batch);
-        liveView.draw(shipObject.getLiveLeft(), myGdxGame.batch);
+        scoreTextView.draw(myGdxGame.batch);
+        liveView.draw(myGdxGame.batch);
         pauseButton.draw(myGdxGame.batch);
         myGdxGame.batch.end();
 
