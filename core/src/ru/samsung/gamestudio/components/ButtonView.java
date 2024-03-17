@@ -17,10 +17,7 @@ public class ButtonView extends View {
 
     public ButtonView(float x, float y, float width, float height, BitmapFont font, String texturePath, String text) {
         super(x, y, width, height);
-        this.x = x;
-        this.y = y;
-        this.height = height;
-        this.width = width;
+
         this.text = text;
         this.bitmapFont = font;
 
@@ -33,17 +30,23 @@ public class ButtonView extends View {
         textX = x + (width - textWidth) / 2;
         textY = y + (height + textHeight) / 2;
     }
+    
+    public ButtonView(float x, float y, float width, float height, String texturePath) {
+        super(x, y, width, height);
+
+        texture  = new Texture(texturePath);
+    }
 
     @Override
     public void draw(SpriteBatch batch) {
         batch.draw(texture, x, y, width, height);
-        bitmapFont.draw(batch, text, textX, textY);
+        if (bitmapFont != null) bitmapFont.draw(batch, text, textX, textY);
     }
 
     @Override
     public void dispose() {
         texture.dispose();
-        bitmapFont.dispose();
+        if (bitmapFont != null) bitmapFont.dispose();
     }
 
 }

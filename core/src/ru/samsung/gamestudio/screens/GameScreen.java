@@ -48,7 +48,7 @@ public class GameScreen extends ScreenAdapter {
         topBlackoutView = new ImageView(0, 1180, "textures/top_blackout.png");
         liveView = new LiveView(305, 1215);
         scoreTextView = new TextView(myGdxGame.commonWhiteFont, 50, 1215);
-        pauseButton = new ButtonView(605, 1200, 46, 54, myGdxGame.commonBlackFont, "textures/pause_icon.png", "");
+        pauseButton = new ButtonView(605, 1200, 46, 54, "textures/pause_icon.png");
     }
 
     @Override
@@ -112,8 +112,6 @@ public class GameScreen extends ScreenAdapter {
         liveView.draw(myGdxGame.batch);
         pauseButton.draw(myGdxGame.batch);
         myGdxGame.batch.end();
-
-        myGdxGame.debugRenderer.render(myGdxGame.world, myGdxGame.camera.combined);
     }
 
     private void updateTrash() {
