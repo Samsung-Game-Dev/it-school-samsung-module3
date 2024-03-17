@@ -8,6 +8,7 @@ public class GameSession {
     public GameState state;
     long nextEnemySpawnTime;
     long sessionStartTime;
+    long pauseStartTime;
 
     public GameSession() {
     }
@@ -21,11 +22,14 @@ public class GameSession {
 
     public void pauseGame() {
         state = GameState.PAUSED;
+        pauseStartTime = TimeUtils.millis();
     }
 
     public void resumeGame() {
         state = GameState.PLAYING;
+        sessionStartTime += TimeUtils.millis() - pauseStartTime;
     }
+
 
     public boolean shouldSpawnTrash() {
         if (nextEnemySpawnTime <= TimeUtils.millis()) {
