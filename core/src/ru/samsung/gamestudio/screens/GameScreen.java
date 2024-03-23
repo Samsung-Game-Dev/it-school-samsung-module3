@@ -92,7 +92,6 @@ public class GameScreen extends ScreenAdapter {
         for (BulletObject bullet : bulletArray) bullet.draw(myGdxGame.batch);
         myGdxGame.batch.end();
 
-        myGdxGame.debugRenderer.render(myGdxGame.world, myGdxGame.camera.combined);
     }
 
     private void updateTrash() {
