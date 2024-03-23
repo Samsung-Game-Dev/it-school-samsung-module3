@@ -5,10 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
-import ru.samsung.gamestudio.ContactManager;
-import ru.samsung.gamestudio.GameSession;
-import ru.samsung.gamestudio.GameSettings;
-import ru.samsung.gamestudio.MyGdxGame;
+import ru.samsung.gamestudio.*;
 import ru.samsung.gamestudio.components.*;
 import ru.samsung.gamestudio.objects.BulletObject;
 import ru.samsung.gamestudio.objects.ShipObject;
@@ -44,11 +41,11 @@ public class GameScreen extends ScreenAdapter {
 
         shipObject = new ShipObject((GameSettings.SCREEN_WIDTH / 2f), 150, myGdxGame.world);
 
-        backgroundView = new MovingBackgroundView("textures/background.png");
-        topBlackoutView = new ImageView(0, 1180, "textures/top_blackout.png");
+        backgroundView = new MovingBackgroundView(GameResources.BACKGROUND_IMG_PATH);
+        topBlackoutView = new ImageView(0, 1180, GameResources.BLACKOUT_TOP_IMG_PATH);
         liveView = new LiveView(305, 1215);
         scoreTextView = new TextView(myGdxGame.commonWhiteFont, 50, 1215);
-        pauseButton = new ButtonView(605, 1200, 46, 54, "textures/pause_icon.png");
+        pauseButton = new ButtonView(605, 1200, 46, 54, GameResources.PAUSE_IMG_PATH);
     }
 
     @Override
