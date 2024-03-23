@@ -8,14 +8,14 @@ import java.util.Random;
 
 public class TrashObject extends GameObject {
 
-    private static final float paddingHorizontal = 30f;
+    private static final int paddingHorizontal = 30;
 
-    public TrashObject(World world) {
+    public TrashObject(int width, int height, String texturePath, World world) {
         super(
-                "textures/trash.png",
-                140f / 2 + paddingHorizontal + (new Random()).nextInt((int) (GameSettings.SCREEN_WIDTH - 2 * paddingHorizontal - 140)),
-                GameSettings.SCREEN_HEIGHT + 100f / 2,
-                140, 100,
+                texturePath,
+                width / 2 + paddingHorizontal + (new Random()).nextInt((GameSettings.SCREEN_WIDTH - 2 * paddingHorizontal - width)),
+                GameSettings.SCREEN_HEIGHT + height / 2,
+                width, height,
                 world
         );
 

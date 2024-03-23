@@ -11,8 +11,8 @@ public class ShipObject extends GameObject {
 
     long lastShotTime;
 
-    public ShipObject(float x, float y, World world) {
-        super("textures/ship.png", x, y, 150, 150, world);
+    public ShipObject(int x, int y, int width, int height, String texturePath, World world) {
+        super(texturePath, x, y, width, height, world);
         body.setLinearDamping(10);
     }
 
@@ -32,7 +32,7 @@ public class ShipObject extends GameObject {
 
     private void putInFrame() {
         if (getY() > (GameSettings.SCREEN_HEIGHT / 2f - height / 2f)) {
-            setY((GameSettings.SCREEN_HEIGHT / 2f - height / 2f));
+            setY((int) (GameSettings.SCREEN_HEIGHT / 2f - height / 2f));
         }
         if (getY() <= (height / 2f)) {
             setY(height / 2);

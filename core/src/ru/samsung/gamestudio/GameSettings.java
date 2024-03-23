@@ -20,4 +20,13 @@ public class GameSettings {
     public static int BULLET_VELOCITY = 200; // in [m/s] - meter per second
     public static int SHOOTING_COOL_DOWN = 1000; // in [ms] - milliseconds
 
+    // Object sizes
+
+    public static final int SHIP_WIDTH = 150;
+    public static final int SHIP_HEIGHT = 150;
+    public static final int TRASH_WIDTH = 140;
+    public static final int TRASH_HEIGHT = 100;
+    public static final int BULLET_WIDTH = 15;
+    public static final int BULLET_HEIGHT = 45;
+
 }
