@@ -39,7 +39,12 @@ public class GameScreen extends ScreenAdapter {
         trashArray = new ArrayList<>();
         bulletArray = new ArrayList<>();
 
-        shipObject = new ShipObject((GameSettings.SCREEN_WIDTH / 2f), 150, myGdxGame.world);
+        shipObject = new ShipObject(
+                GameSettings.SCREEN_WIDTH / 2, 150,
+                GameSettings.SHIP_WIDTH, GameSettings.SHIP_HEIGHT,
+                GameResources.SHIP_IMG_PATH,
+                myGdxGame.world
+        );
 
         backgroundView = new MovingBackgroundView(GameResources.BACKGROUND_IMG_PATH);
         topBlackoutView = new ImageView(0, 1180, GameResources.BLACKOUT_TOP_IMG_PATH);
@@ -60,14 +65,19 @@ public class GameScreen extends ScreenAdapter {
         handleInput();
 
         if (gameSession.shouldSpawnTrash()) {
-            TrashObject trashObject = new TrashObject(myGdxGame.world);
+            TrashObject trashObject = new TrashObject(
+                    GameSettings.TRASH_WIDTH, GameSettings.TRASH_HEIGHT,
+                    GameResources.TRASH_IMG_PATH,
+                    myGdxGame.world
+            );
             trashArray.add(trashObject);
         }
 
         if (shipObject.needToShoot()) {
             BulletObject laserBullet = new BulletObject(
-                    shipObject.getX(),
-                    shipObject.getY() + shipObject.height / 2,
+                    shipObject.getX(), shipObject.getY() + shipObject.height / 2,
+                    GameSettings.BULLET_WIDTH, GameSettings.BULLET_HEIGHT,
+                    GameResources.BULLET_IMG_PATH,
                     myGdxGame.world
             );
             bulletArray.add(laserBullet);
