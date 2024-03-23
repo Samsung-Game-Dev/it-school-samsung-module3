@@ -5,10 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
-import ru.samsung.gamestudio.ContactManager;
-import ru.samsung.gamestudio.GameSession;
-import ru.samsung.gamestudio.GameSettings;
-import ru.samsung.gamestudio.MyGdxGame;
+import ru.samsung.gamestudio.*;
 import ru.samsung.gamestudio.objects.BulletObject;
 import ru.samsung.gamestudio.objects.ShipObject;
 import ru.samsung.gamestudio.objects.TrashObject;
@@ -35,7 +32,12 @@ public class GameScreen extends ScreenAdapter {
         trashArray = new ArrayList<>();
         bulletArray = new ArrayList<>();
 
-        shipObject = new ShipObject((GameSettings.SCREEN_WIDTH / 2f), 150, myGdxGame.world);
+        shipObject = new ShipObject(
+                GameSettings.SCREEN_WIDTH / 2, 150,
+                GameSettings.SHIP_WIDTH, GameSettings.SHIP_HEIGHT,
+                GameResources.SHIP_IMG_PATH,
+                myGdxGame.world
+        );
     }
 
     @Override
@@ -50,14 +52,19 @@ public class GameScreen extends ScreenAdapter {
         handleInput();
 
         if (gameSession.shouldSpawnTrash()) {
-            TrashObject trashObject = new TrashObject(myGdxGame.world);
+            TrashObject trashObject = new TrashObject(
+                    GameSettings.TRASH_WIDTH, GameSettings.TRASH_HEIGHT,
+                    GameResources.TRASH_IMG_PATH,
+                    myGdxGame.world
+            );
             trashArray.add(trashObject);
         }
 
         if (shipObject.needToShoot()) {
             BulletObject laserBullet = new BulletObject(
-                    shipObject.getX(),
-                    shipObject.getY() + shipObject.height / 2,
+                    shipObject.getX(), shipObject.getY() + shipObject.height / 2,
+                    GameSettings.BULLET_WIDTH, GameSettings.BULLET_HEIGHT,
+                    GameResources.BULLET_IMG_PATH,
                     myGdxGame.world
             );
             bulletArray.add(laserBullet);
