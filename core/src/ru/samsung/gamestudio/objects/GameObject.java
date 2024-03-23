@@ -12,13 +12,13 @@ import static ru.samsung.gamestudio.GameSettings.SCALE;
 
 public class GameObject {
 
-    public float width;
-    public float height;
+    public int width;
+    public int height;
 
     public Body body;
     Texture texture;
 
-    GameObject(String texturePath, float x, float y, float width, float height, World world) {
+    GameObject(String texturePath, int x, int y, int width, int height, World world) {
         this.width = width;
         this.height = height;
 
@@ -34,19 +34,19 @@ public class GameObject {
                 height);
     }
 
-    public float getX() {
-        return body.getPosition().x / SCALE;
+    public int getX() {
+        return (int) (body.getPosition().x / SCALE);
     }
 
-    public float getY() {
-        return body.getPosition().y / SCALE;
+    public int getY() {
+        return (int) (body.getPosition().y / SCALE);
     }
 
-    public void setX(float x) {
+    public void setX(int x) {
         body.setTransform(x * SCALE, body.getPosition().y, 0);
     }
 
-    public void setY(float y) {
+    public void setY(int y) {
         body.setTransform(body.getPosition().x, y * SCALE, 0);
     }
 

@@ -14,6 +14,11 @@ public class GameSettings {
     public static final int POSITION_ITERATIONS = 6;
     public static final float SCALE = 0.05f;
 
-    public static float SHIP_FORCE_RATIO = 4;
+    public static float SHIP_FORCE_RATIO = 10;
+
+    // Object sizes
+
+    public static final int SHIP_WIDTH = 150;
+    public static final int SHIP_HEIGHT = 150;
 
 }

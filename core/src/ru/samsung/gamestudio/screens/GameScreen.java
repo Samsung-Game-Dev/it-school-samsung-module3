@@ -5,6 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
+import ru.samsung.gamestudio.GameResources;
 import ru.samsung.gamestudio.GameSettings;
 import ru.samsung.gamestudio.MyGdxGame;
 import ru.samsung.gamestudio.objects.ShipObject;
@@ -17,7 +18,13 @@ public class GameScreen extends ScreenAdapter {
 
     public GameScreen(MyGdxGame myGdxGame) {
         this.myGdxGame = myGdxGame;
-        shipObject = new ShipObject((GameSettings.SCREEN_WIDTH / 2f), 150, myGdxGame.world);
+
+        shipObject = new ShipObject(
+                GameSettings.SCREEN_WIDTH / 2, 150,
+                GameSettings.SHIP_WIDTH, GameSettings.SHIP_HEIGHT,
+                GameResources.SHIP_IMG_PATH,
+                myGdxGame.world
+        );
     }
 
     @Override
