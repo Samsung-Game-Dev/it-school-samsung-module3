@@ -5,6 +5,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
+import ru.samsung.gamestudio.GameResources;
 import ru.samsung.gamestudio.MyGdxGame;
 import ru.samsung.gamestudio.components.ButtonView;
 import ru.samsung.gamestudio.components.ImageView;
@@ -26,9 +27,9 @@ public class SettingsScreen extends ScreenAdapter {
     public SettingsScreen(MyGdxGame myGdxGame) {
         this.myGdxGame = myGdxGame;
 
-        backgroundView = new MovingBackgroundView("textures/background.png");
+        backgroundView = new MovingBackgroundView(GameResources.BACKGROUND_IMG_PATH);
         titleTextView = new TextView(myGdxGame.largeWhiteFont, 256, 956, "Settings");
-        blackoutImageView = new ImageView(85, 365, "textures/blackout_settings.png");
+        blackoutImageView = new ImageView(85, 365, GameResources.BLACKOUT_MIDDLE_IMG_PATH);
         musicSettingView = new TextView(myGdxGame.commonWhiteFont, 173, 717, "music: " + "ON");
         soundSettingView = new TextView(myGdxGame.commonWhiteFont, 173, 658, "sound: " + "ON");
         clearSettingView = new TextView(myGdxGame.commonWhiteFont, 173, 599, "clear records");
@@ -36,7 +37,7 @@ public class SettingsScreen extends ScreenAdapter {
                 280, 447,
                 160, 70,
                 myGdxGame.commonBlackFont,
-                "textures/button_background_1.png",
+                GameResources.BUTTON_SHORT_BG_IMG_PATH,
                 "return"
         );
 
