@@ -16,7 +16,7 @@ public class GameSettings {
 
     public static float SHIP_FORCE_RATIO = 10;
     public static float TRASH_VELOCITY = 20;
-    public static long STARTING_ENEMY_APPEARANCE_COOL_DOWN = 2000; // in [ms] - milliseconds
+    public static long STARTING_TRASH_APPEARANCE_COOL_DOWN = 2000; // in [ms] - milliseconds
 
     // Object sizes
 
