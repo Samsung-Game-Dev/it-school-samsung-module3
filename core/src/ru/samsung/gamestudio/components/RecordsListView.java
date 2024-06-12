@@ -7,37 +7,22 @@ import ru.samsung.gamestudio.GameSettings;
 
 import java.util.ArrayList;
 
-public class RecordsListView extends View {
-
-    BitmapFont font;
-    String recordsListString;
+public class RecordsListView extends TextView {
 
     public RecordsListView(BitmapFont font, float y) {
-        super(0, y);
-        this.font = font;
-        recordsListString = "";
+        super(font, 0, y, "");
     }
 
     public void setRecords(ArrayList<Integer> recordsList) {
-        recordsListString = "";
+        text = "";
         int countOfRows = Math.min(recordsList.size(), 5);
         for (int i = 0; i < countOfRows; i++) {
             System.out.println(recordsList.get(i));
-            recordsListString += (i + 1) + ". - " + recordsList.get(i) + "\n";
+            text += (i + 1) + ". - " + recordsList.get(i) + "\n";
         }
 
-        GlyphLayout glyphLayout = new GlyphLayout(font, recordsListString);
+        GlyphLayout glyphLayout = new GlyphLayout(font, text);
         x = (GameSettings.SCREEN_WIDTH - glyphLayout.width) / 2;
-    }
-
-    @Override
-    public void draw(SpriteBatch batch) {
-        font.draw(batch, recordsListString, x, y);
-    }
-
-    @Override
-    public void dispose() {
-        font.dispose();
     }
 
 }
